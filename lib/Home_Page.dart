@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:routing/Profilr_p.dart';
 class Home extends StatefulWidget {
   @override
   _HomeState createState() => _HomeState();
@@ -14,7 +15,15 @@ class _HomeState extends State<Home> {
     });
     if(index==4)
       {
-        Navigator.pushNamed(context, '/profile');
+        // 1st method Navigator.pushNamed(context, '/profile');
+       /* 2nd Navigator.pushReplacementNamed(context, '/profile',arguments: {
+         'name':'RAMENDRA PATE',
+        });*/
+        Navigator.push(context, MaterialPageRoute(builder: (context)=>Profile(),
+        settings: RouteSettings(arguments: {
+          'name':'RAMENDRA PATE'
+        })));
+
       }
   }
   @override
